@@ -1,0 +1,12 @@
+# ts output
+/dist
+
+# dotenv
+.env
+
+# lockfile
+pnpm-lock.yaml
+package-lock.json
+
+# npm modules
+node_modules
