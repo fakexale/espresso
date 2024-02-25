@@ -53,7 +53,10 @@ export const execute = async (interaction: ChatInputCommandInteraction) => {
                 timestamp: new Date().toISOString(),
             }
 
-            guildMember?.ban({reason: `Banned by ${moderator?.user.username}\nReason provided: "${reason}"`})
+            const formattedBanMessage = `Banned by ${moderator?.user.username}\nReason provided: "${reason}"`
+
+            const banManager = interaction.guild?.bans;
+            await banManager?.create(target as User, { reason: formattedBanMessage })
                 .catch(console.error);
 
             if (willAlert) {
