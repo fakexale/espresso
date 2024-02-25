@@ -34,14 +34,14 @@ const restClient = new REST().setToken(token as string);
 
 (async () => {
     try {
-        console.log(`Refreshing ${commands.length} application commands.`);
+        console.log(`Refreshing ${commands.length} application commands to guild ID ${guildId}.`);
 
         const data = await restClient.put(
             Routes.applicationGuildCommands(clientId as string, guildId as string),
             {body: commands}
         ) as string;
 
-        console.log(`Refreshed ${data.length} application commands.`);
+        console.log(`Refreshed ${data.length} application commands to guild ID ${guildId}.`);
     } catch(err) {
         console.error(err);
     }
