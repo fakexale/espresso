@@ -30,7 +30,7 @@ if these are not present, use ``tsc`` or ``pnpm run build``.
 depending on whether you have typescript installed globally
 
 ### difference between deployGuildCommands and deployCommands
-as stated in the guide, the only difference is the scope at which commadns can be accessed.
+as stated in the guide, the only difference is the scope at which commands can be accessed.
 
 ``deployGuildCommands.js`` will deploy the commands to ``GUILD_ID`` (specified in .env).
 commands will only be accessible in the guild.
