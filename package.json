@@ -1,7 +1,6 @@
 {
 	"scripts": {
-		"dev": "tsx watch src/index.ts",
-		"build": "tsc"
+		"dev": "bun run --watch src/index.ts"
 	},
 	"dependencies": {
 		"discord.js": "^14.14.1",
