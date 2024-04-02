@@ -39,4 +39,4 @@ for (const file of eventFiles) {
 	}
 }
 
-client.login(process.env.TOKEN);
+client.login(Bun.env.TOKEN);

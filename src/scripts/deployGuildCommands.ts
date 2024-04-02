@@ -4,9 +4,9 @@ import * as path from "node:path";
 
 const commands: any[] = [];
 
-const token: string | undefined = process.env.TOKEN;
-const clientId: string | undefined = process.env.APP_ID;
-const guildId: string | undefined = process.env.GUILD_ID;
+const token = Bun.env.TOKEN;
+const clientId = Bun.env.APP_ID;
+const guildId = Bun.env.GUILD_ID;
 
 const foldersPath = path.join(__dirname, "../commands");
 const commandFolders = fs.readdirSync(foldersPath);
@@ -27,14 +27,14 @@ for (const folder of commandFolders){
 	}
 }
 
-const restClient = new REST().setToken(token as string);
+const restClient = new REST().setToken(token);
 
 (async () => {
     try {
         console.log(`Refreshing ${commands.length} application commands to guild ID ${guildId}.`);
 
         const data = await restClient.put(
-            Routes.applicationGuildCommands(clientId as string, guildId as string),
+            Routes.applicationGuildCommands(clientId, guildId),
             {body: commands}
         ) as string;
 
