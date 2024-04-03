@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.ts",
+    "deploy": "bun run src/scripts/deployCommands.ts",
+    "deploy:guild": "bun run src/scripts/deployGuildCommands.ts"
   },
   "dependencies": {
     "discord.js": "^14.14.1"
