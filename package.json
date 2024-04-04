@@ -1,14 +1,14 @@
 {
-	"scripts": {
-		"dev": "tsx watch src/index.ts",
-		"build": "tsc"
-	},
-	"dependencies": {
-		"discord.js": "^14.14.1",
-		"dotenv": "^16.4.4"
-	},
-	"devDependencies": {
-		"tsx": "^4.7.1",
-		"typescript": "^5.3.3"
-	}
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "deploy": "bun run src/scripts/deployCommands.ts",
+    "deploy:guild": "bun run src/scripts/deployGuildCommands.ts"
+  },
+  "dependencies": {
+    "discord.js": "^14.14.1"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.0.12",
+    "typescript": "^5.3.3"
+  }
 }

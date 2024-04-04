@@ -1,11 +1,8 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 import { Client, Collection, GatewayIntentBits} from "discord.js";
-import dotenv from "dotenv";
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds]});
-
-dotenv.config()
 
 client.commands = new Collection();
 
@@ -42,4 +39,4 @@ for (const file of eventFiles) {
 	}
 }
 
-client.login(process.env.TOKEN);
+client.login(Bun.env.TOKEN);
